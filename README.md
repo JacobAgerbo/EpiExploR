@@ -10,9 +10,9 @@ The only thing you need is some data in .csv and a output from Bismark (.cov.gz)
 See examples below.
 
 
-## Main Features in QuickFixR
+## Main Features in EpiExploR
 
-This package is mainly combining already established methods from really nice pacakages like _animalcules_, _lmerTest_ and _boral_. I am only trying to provide a more user-friendly approach. These packages should be fully credited for their amazing work!
+This package is mainly combining already established methods from really nice packages like _animalcules_, _lmerTest_ and _boral_. I am only trying to provide a more user-friendly approach. These packages should be fully credited for their amazing work!
 
 • Uploading of your data
 
