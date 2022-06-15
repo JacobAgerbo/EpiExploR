@@ -1,6 +1,6 @@
 dependencies <- c("devtools","BiocManager","shiny","shinyjs",
                   "MultiAssayExperiment","ggplot2","plotly",
-                  "shinythemes", "tidyverse", "methylKit", "sessioninfo", "memoise", "edmr")
+                  "shinythemes", "tidyverse", "methylKit", "sessioninfo", "memoise")
 
 # Install packages not yet installed
 #CRAN
@@ -15,13 +15,14 @@ BiocManager::install(dependencies[!installed_packages])}
 #Devtools github: edmr
 installed_packages <- "edmr" %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
-devtools::install_github("PierreMasselot/emdr")}
+devtools::install_github("PierreMasselot/emdr",force = TRUE)}
 
 # Packages loading
 invisible(lapply(dependencies, library, character.only = TRUE))
 # source helper for ui
 source(file.path("helpers", "helpers.R"),  local = TRUE)
 source(file.path("helpers", "ui_helpers.R"),  local = TRUE)
+source(file.path("../../R/", "utils.R"),  local = TRUE)
 
 ## 
 ui <- navbarPage(
