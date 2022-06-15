@@ -1,7 +1,6 @@
 dependencies <- c("devtools","BiocManager","shiny","shinyjs",
                   "MultiAssayExperiment","ggplot2","plotly",
-                  "shinythemes", "tidyverse")
-
+                  "shinythemes", "tidyverse", "methylKit", "sessioninfo", "memoise", "edmr")
 
 # Install packages not yet installed
 #CRAN
@@ -12,6 +11,11 @@ if (any(installed_packages == FALSE)) {
 installed_packages <- dependencies %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
 BiocManager::install(dependencies[!installed_packages])}
+
+#Devtools github: edmr
+installed_packages <- "edmr" %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+devtools::install_github("PierreMasselot/emdr")}
 
 # Packages loading
 invisible(lapply(dependencies, library, character.only = TRUE))
